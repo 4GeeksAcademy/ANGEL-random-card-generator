@@ -1,1 +1,101 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 100px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+button {
+  padding: 10px;
+  background-color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.timer {
+  font-size: 20px;
+  color: white;
+  margin-right: 3rem;
+}
+.form-size label {
+  color: white;
+  font-size: 18px;
+}
+.form-size input {
+  background-color: white;
+  color: #000;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.form-size button {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.form-size button:hover {
+  color: white;
+  background-color: gray;
+}
+.main {
+  background-color: #0e7e12;
+  flex: 1;
+}
+section {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .top {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  font-size: 100px;
+  padding-left: 0.5rem;
+}
+.card .center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 150px;
+}
+.card .bottom {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  font-size: 100px;
+  padding-right: 0.5rem;
+}
