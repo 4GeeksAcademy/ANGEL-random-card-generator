@@ -95,7 +95,6 @@ section {
 .card .bottom {
   width: 100%;
   display: flex;
-  justify-content: end;
   font-size: 100px;
-  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }

@@ -23,9 +23,14 @@ window.onload = function() {
 
   let randomSymbol = Math.floor(Math.random() * cardSymbols.length);
   let randomNumber = Math.floor(Math.random() * cardNumbers.length);
+  let randomColor = Math.floor(Math.random() * cardColors.length);
   document.querySelector(".top").innerHTML = cardSymbols[randomSymbol];
   document.querySelector(".bottom").innerHTML = cardSymbols[randomSymbol];
   document.querySelector(".center").innerHTML = cardNumbers[randomNumber];
+  const colorCard = document.getElementById("card");
+  colorCard.style.color = cardColors[randomColor];
+  const bottomCard = document.getElementById("bottom");
+  bottomCard.style.transform = "rotate(180deg)";
 };
 
 const generateButton = document.querySelector(".generateButton");
