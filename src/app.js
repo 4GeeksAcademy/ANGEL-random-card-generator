@@ -54,12 +54,12 @@ activateTimerButtom.addEventListener("click", () => {
   if (timmerInterval) {
     clearInterval(timmerInterval);
   }
-  seconds = 0;
+  seconds = 1;
   timerElement.textContent = `Tiempo: ${seconds} segundos`;
   timmerInterval = setInterval(() => {
     seconds++;
     timerElement.textContent = `Tiempo: ${seconds} segundos`;
-    seconds === 10 ? (clearInterval(timmerInterval), window.onload()) : null;
+    seconds === 10 ? (window.onload(), (seconds = 0)) : null;
   }, 1000);
 });
 
