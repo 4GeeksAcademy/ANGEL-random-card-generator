@@ -34,7 +34,7 @@ window.onload = function() {
 };
 
 const generateButton = document.querySelector(".generateButton");
-const activateTimerButtom = document.querySelector(".activateTimmerButtom");
+const activateTimerButtom = document.getElementById("activateTimmerButtom");
 const timerElement = document.getElementById("timer");
 const widthCard = document.getElementById("widthCard");
 const heightCard = document.getElementById("heightCard");
@@ -49,18 +49,25 @@ generateButton.addEventListener("click", () => {
 //temporizador
 let timmerInterval;
 let seconds = 0;
+let isTimerRunning = false;
+activateTimerButtom.innerHTML = "Activar temporizador";
 
 activateTimerButtom.addEventListener("click", () => {
   if (timmerInterval) {
     clearInterval(timmerInterval);
-  }
-  seconds = 1;
-  timerElement.textContent = `Tiempo: ${seconds} segundos`;
-  timmerInterval = setInterval(() => {
-    seconds++;
+    activateTimerButtom.innerHTML = "Activar temporizador";
+    isTimerRunning = false;
+    timmerInterval = null;
+  } else {
     timerElement.textContent = `Tiempo: ${seconds} segundos`;
-    seconds === 10 ? (window.onload(), (seconds = 0)) : null;
-  }, 1000);
+    activateTimerButtom.innerHTML = "Pausar temporizador";
+    timmerInterval = setInterval(() => {
+      seconds++;
+      timerElement.textContent = `Tiempo: ${seconds} segundos`;
+      seconds === 10 ? (window.onload(), (seconds = 0)) : null;
+    }, 1000);
+    isTimerRunning = true;
+  }
 });
 
 //cambiar tamaño de la carta
